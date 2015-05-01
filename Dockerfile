@@ -40,5 +40,5 @@ RUN mkdir -p /var/run/postgresql/9.4-main.pg_stat_tmp \
     && mvn package -am -pl server \
     && mvn package -am -pl cli \
     && killall postgres \
-    && alias keywhiz.cli='./cli/target/keywhiz-cli-*-SNAPSHOT-shaded.jar' \
-    && alias keywhiz.server='java -jar server/target/keywhiz-server-*-SNAPSHOT-shaded.jar server'
+    && echo 'alias keywhiz.cli="./cli/target/keywhiz-cli-*-SNAPSHOT-shaded.jar"' >> /root/.bashrc \
+    && echo 'alias keywhiz.server="java -jar server/target/keywhiz-server-*-SNAPSHOT-shaded.jar server"' >> /root/.bashrc
